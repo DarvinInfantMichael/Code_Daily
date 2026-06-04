@@ -1,0 +1,118 @@
+<script>
+//Tasks :
+//Write a function that takes an age as input and returns a new object with the age updated using the spread operator.
+// Write a function that adds a new property (city) to an existing object without modifying the original object.
+// Write a function that returns all even numbers from an array.
+// Write a function that returns the sum of all elements in an array using reduce().
+// Write a function that converts all strings in an array to uppercase using map().
+// Write a function that finds the largest number in an array.
+// Write a function that accepts a student object and returns only the name and department using destructuring.
+// Write a function that merges two arrays into a single array using the spread operator.
+// Write a function that counts the occurrences of each element in an array and returns the result as an object.
+// Write a function that removes duplicate values from an array.
+
+// 1).Write a function that takes an age as input and returns a new object with the age updated using the spread operator.
+
+const a={
+    name:"Dim",
+    age:21
+}
+const upDate = (n) =>{
+
+    const res={...a,age:n}
+    return res
+}
+console.log(upDate(22));
+
+//2).Write a function that adds a new property (city) to an existing object without modifying the original object.
+
+const b={
+    name:"Darvin"
+}
+const ner = (city) =>{
+    const r={...b,city};
+    return r;
+}
+console.log(ner("chennai"));
+
+//3).Write a function that returns all even numbers from an array.
+
+const Eve = (...num) =>{
+    const res=num.filter((n)=>n%2==0);
+    return res;
+}
+console.log(Eve(1,2,3,4));
+
+const Odd = (...num) =>{
+    const res=num.filter((n)=>n%2!==0);
+    return res;
+}
+console.log(Odd(1,2,3,4,5));
+
+//4).Write a function that returns the sum of all elements in an array using reduce().
+
+const total = (...arr) =>{
+    const res = arr.reduce((res,arr)=>res + arr ,0);
+    return res;
+}
+console.log(total(50,60,70,80));
+
+//5). Write a function that converts all strings in an array to uppercase using map().
+
+const upper = (...arr) => {
+    const res = arr.map(n => n.toUpperCase());
+    return res;
+}
+console.log(upper("dim","god","joel"));
+
+//6).Write a function that finds the largest number in an array.
+
+const largest = (...arr) => {
+    const res = Math.max(...arr);// explanation 
+    return res;
+}
+console.log(largest(10,20,30,40));
+
+//7).Write a function that accepts a student object and returns only the name and department using destructuring.
+
+const student={
+    name:"Darvin",
+    age:22,
+    dept:"IT"
+}
+
+const display = ({name,dept}) =>
+    `${name} 
+${dept}`
+
+console.log(display(student));
+
+//8).Write a function that merges two arrays into a single array using the spread operator.
+
+const fun =(a,b)=>{
+    const res =[...a,...b];///explanation
+    return res;
+}
+console.log(fun([1,2],[3,4]));
+
+//9).Write a function that counts the occurrences of each element in an array and returns the result as an object.
+
+//10). Write a function that removes duplicate values from an array.
+const unique = (...arr) => [...new Set(arr)];
+
+console.log(unique(1,2,2,3,4,5));
+
+//--------For Intermidiate Level----------------------------------------------------------------
+
+// Write a function that returns the second largest number in an array.
+// Write a function that checks whether a given object contains a specific key.
+// Write a function that returns all students whose marks are greater than 75.
+// Write a function that calculates the average of numbers in an array.
+// Write a function that converts an array of objects into an array containing only their names.
+// Write a function that merges two objects and updates common properties.
+// Write a function that returns the number of vowels in a string.
+// Write a function that reverses an array without using reverse().
+// Write a function that finds the longest word in an array of strings.
+// Write a function that sorts an array of numbers in ascending order.
+
+</script>
