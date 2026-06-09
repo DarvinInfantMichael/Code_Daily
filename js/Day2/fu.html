@@ -1,0 +1,158 @@
+// Write a function that returns the second largest number in an array.
+// Write a function that checks whether a given object contains a specific key.
+// Write a function that returns all students whose marks are greater than 75.
+// Write a function that calculates the average of numbers in an array.
+// Write a function that converts an array of objects into an array containing only their names.
+// Write a function that merges two objects and updates common properties.
+// Write a function that returns the number of vowels in a string.
+// Write a function that reverses an array without using reverse().
+// Write a function that finds the longest word in an array of strings.
+// Write a function that sorts an array of numbers in ascending order.
+
+<!-- //1). Write a function that returns the second largest number in an array. -->
+ <script>
+
+    const SecondLargest = (arr) =>{
+        const s=[...arr].sort((a,b)=>b-a);
+        return s[1];
+    }
+    console.log(SecondLargest([10,30,20,40,50]));
+
+    const SL = (arr) =>{
+        const L=arr[0];
+        const ss=arr[0];
+
+        for(let i=0;i<arr.length;i++){
+            if(arr[i]>L){
+                ss=L;
+                L=arr[i];
+            }else if(arr[i]>ss && arr[i]!==L){
+                ss=arr[i];
+            }
+        }
+        return ss;
+    }
+    console.log(SecondLargest([10,20,30,40]));
+
+    // Write a function that checks whether a given object contains a specific key.
+
+    const hh=(obj,key)=>{
+        return key in obj
+    }
+    console.log(hh({name:"dim",age:21},"dept"));
+
+    // Write a function that returns all students whose marks are greater than 75.
+
+    const Top_students = (students)=>{
+
+        const res =[];
+
+        for(let i=0;i<students.length;i++){
+
+            if(students[i].mark > 75){
+                res.push (students[i]);
+            }
+
+        }return res;
+    };
+    const students = [
+        {name:"dim",mark:74},
+        {name:"God",mark:90},
+        {name:"Joel",mark:90}];
+    
+        console.log(Top_students(students));
+
+        //also by
+    const students1 = [
+    { name: "John", marks: 80 },
+    { name: "Sam", marks: 65 },
+    { name: "David", marks: 90 }
+];
+
+const t_s = (students1) => {
+    const r = students1.filter(student => student.marks > 75);
+    return r;
+};
+
+console.log(t_s(students1));
+
+// Write a function that calculates the average of numbers in an array.
+
+const functionAVg = (num) => {
+
+    let sum =0;
+
+    for (let n of num){
+        sum+=n;
+    }
+
+    return sum/num.length;
+
+}
+console.log(functionAVg([10,20,30,40,50]));
+
+// Write a function that converts an array of objects into an array containing only their names.
+const special =(arr)=>{
+    return arr.map(person=>person.name);
+}
+const users=[{
+    name:"darvin"},
+    {name:"god"},
+    {name:"joel"
+}];
+
+console.log(special(users));
+
+// Write a function that merges two objects and updates common properties.
+
+const common =(obj1,obj2)=>{
+    const update={...obj1,...obj2};
+    return update;
+}
+console.log(common(
+    {name:"dim",age:21},
+{age:22,city:"chennai"}));
+
+// Write a function that returns the number of vowels in a string.
+
+const Vowel_Check =(str)=>{
+    let count =0;
+    const Vow="AEIOUaeiou";
+
+    for(let v of str){
+        if(Vow.includes(v)){
+            count++;
+        }
+    }return count;
+}
+console.log(Vowel_Check("JavaScript"));
+
+// Write a function that reverses an array without using reverse().
+
+const reverse =(arr)=>{
+    let res=[];
+
+    for(let i=arr.length-1;i>=0;i--){
+        res.push(arr[i]);
+    }return res;
+    }
+    console.log(reverse([10,20,30,40]));
+
+// Write a function that finds the longest word in an array of strings.
+
+const logest = (word) => {
+    let cur = word[0];
+
+    for(let i=1;i<word.length;i++){
+        if(word[i].length>cur.length){
+            cur=word[i];
+        }
+    }return cur;
+}
+console.log(logest(["react","java","javaScript"]));
+
+// Write a function that sorts an array of numbers in ascending order.
+const arr5=[10,50,40,30,20];
+arr5.sort();
+console.log(arr5);
+ </script> 
