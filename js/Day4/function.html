@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document1</title>
+</head>
+<body>
+    <script>
+
+//1. User Login Workflow
+// Problem
+// Fetch User
+// Verify User
+// Login User
+// Display "Login Successful"
+
+const getFetch =()=>{
+
+    return new Promise ((res,rej)=>{
+
+        setTimeout(()=>{
+
+            res("User Data Has Fetched Here......");
+
+            if(false){
+                rej("Error in feching....");
+            }
+        },1000);
+    })
+};
+
+const userVerify=()=>{
+return new Promise((res,rej)=>{
+
+    setTimeout(()=>{
+        res("User Data Has Verified successfully....");
+        if(false){
+            rej("User Verification Error...");
+        }
+    },1000);
+})
+};
+
+const getLogin=()=>{
+    return new Promise((re,rj)=>{
+        setTimeout(()=>{
+
+            re("UserLogin Successfully..");
+            if(false){
+                ("Error in Login..");
+            }
+        },1000);
+    })
+};
+
+getFetch().then((data)=>{
+    console.log(data);
+    return userVerify();    
+})
+.then((data)=>{
+    console.log(data);
+    return getLogin();
+    
+})
+.then((data)=>{
+    console.log(data);
+    console.log("Login work Completed..");
+    
+}).catch((err)=>{
+console.log(err);
+
+})
+
+//2. E-Commerce Order Workflow
+// Problem
+// Add Product to Cart
+// Place Order
+// Process Payment
+// Generate Invoice
+// Display "Order Completed"
+
+const getProduct =()=>{
+    return new Promise ((res,rej)=>{
+        setTimeout(()=>{
+            res("User Product Added To Cart...");
+            if(false){
+                rej("Error..");
+            }
+        },4000);
+    })
+};
+
+const getPlace =()=>{
+    return new Promise ((res,rej)=>{
+        setTimeout(()=>{
+            res("User Placed the order...");
+            if(false){
+                rej("Error");
+            }
+        },4000);
+    })
+};
+
+const getProcess =()=>{
+    return new Promise((re,r)=>{
+        setTimeout(()=>{
+            re("User Process Payment....");
+            if(false){
+                r("Error");
+            }
+        },4000);
+    })
+};
+
+const getInvoice =()=>{
+    return new Promise((res,rj)=>{
+        setTimeout(()=>{
+            res("User Invoice Porcesss...");
+            if(false){
+                rj("Error");
+            }
+        },4000);
+    })
+};
+
+// getProduct().then((data)=>{
+//     console.log(data);
+//     return getProduct();   
+// })
+// .then((data)=>{
+//     console.log(data);
+//     return getPlace();
+// })
+// .then((data)=>{
+//     console.log(data);
+//     return getProcess();
+// })
+// .then((data)=>{
+//     console.log(data);
+//     return getInvoice();
+// })
+// .then((data)=>{
+//     console.log(data);
+//     console.log("Oder Placed successfully...");
+    
+// })
+
+const pro = async()=>{
+
+    try{
+        const userProduct =await getProduct();
+        console.log(userProduct);
+
+        const userPlace = await getPlace();
+        console.log(userPlace);
+
+        const userProcess= await getProcess();
+        console.log(userProcess);
+
+        const userInvoice=await getInvoice();
+        console.log(userInvoice);
+
+        console.log("Order Placed Successfully..");    
+    }catch(err){
+        console.log(err);
+            }
+};
+pro();
+
+
+    </script>
+</body>
+</html>
