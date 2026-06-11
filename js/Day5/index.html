@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="head">
+        This is the Heading Tag Section :
+    </h1>
+    <h3 id="heee">this to design it ...</h3>
+    <p class="grp">
+        This is the Paragraph Tag....
+    </p>
+    <p class="grp">
+        This is the Paragraph twoo....
+    </p>
+
+    <button id="btn">click Me...</button>
+    <script>
+        const h = document.getElementById("head");
+        h.textContent= "Welcome Back...";
+        // h.innerHTML = "<span>Hello</span>";
+        h.style.color ="red";
+        h.style.fontSize = "70px";
+        
+
+        const btn = document.getElementById("btn");
+        const h1 = document.getElementById("head");
+        btn.addEventListener("click",()=>{
+            h1.textContent="Button Clicked....";
+            
+        })
+    </script>
+</body>
+</html>
